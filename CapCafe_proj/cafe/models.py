@@ -29,6 +29,12 @@ class MenuItems(models,Model):
             ('Delivered', 'Delivered'),
             ('Cancelled', 'Cancelled'),
         )
-        
+        customer_name=models.CharField(max_length=100)
+email=models.EmailField()
+phone=models.CharField(max_length=20)
+table_num=models.IntegerField(null=True,blank=True)
+status=models.CharField(max_length=20,choices=STATUS_CHOICES, default='pending')
+total_amt=models.DecimalField(max_digit=10,decimal_places=2,default=0.00)
+
 
     
