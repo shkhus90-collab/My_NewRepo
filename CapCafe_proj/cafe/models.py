@@ -21,6 +21,7 @@ class MenuItems(models,Model):
     def __str__(self):
         return self.name
 
+<<<<<<< HEAD
 class Order(models.Model):
     STATUS_CHOICES=(
         ('Pending', 'Pending'),
@@ -31,5 +32,22 @@ class Order(models.Model):
     )
 
         
+=======
+    class Order(models.Model):
+        STATUS_CHOICES=(
+            ('Pending', 'Pending'),
+            ('Preparing', 'Preparing'),
+            ('Ready', 'Ready'),
+            ('Delivered', 'Delivered'),
+            ('Cancelled', 'Cancelled'),
+        )
+                     customer_name=models.CharField(max_length=100)
+email=models.EmailField()
+phone=models.CharField(max_length=20)
+table_num=models.IntegerField(null=True,blank=True)
+status=models.CharField(max_length=20,choices=STATUS_CHOICES, default='pending')
+total_amt=models.DecimalField(max_digit=10,decimal_places=2,default=0.00)
+
+>>>>>>> c4c61d9c0794c063f97377836283ff1353b14239
 
     
