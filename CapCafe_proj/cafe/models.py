@@ -29,7 +29,7 @@ class MenuItems(models,Model):
             ('Delivered', 'Delivered'),
             ('Cancelled', 'Cancelled'),
         )
-        customer_name=models.CharField(max_length=100)
+                     customer_name=models.CharField(max_length=100)
 email=models.EmailField()
 phone=models.CharField(max_length=20)
 table_num=models.IntegerField(null=True,blank=True)
