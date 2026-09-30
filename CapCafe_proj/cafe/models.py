@@ -21,14 +21,15 @@ class MenuItems(models,Model):
     def __str__(self):
         return self.name
 
-    class Order(models.Model):
-        STATUS_CHOICES=(
-            ('Pending', 'Pending'),
-            ('Preparing', 'Preparing'),
-            ('Ready', 'Ready'),
-            ('Delivered', 'Delivered'),
-            ('Cancelled', 'Cancelled'),
-        )
+class Order(models.Model):
+    STATUS_CHOICES=(
+        ('Pending', 'Pending'),
+        ('Preparing', 'Preparing'),
+        ('Ready', 'Ready'),
+        ('Delivered', 'Delivered'),
+        ('Cancelled', 'Cancelled'),
+    )
+
         
 
     
