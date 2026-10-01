@@ -36,7 +36,8 @@ class Order(models.Model):
         ('Pending', 'Pending'),
         ('Preparing', 'Preparing'),
         ('Ready', 'Ready'),
-        ('Delivered', 'Delivered'),            ('Cancelled', 'Cancelled'),
+        ('Delivered', 'Delivered'),            
+        ('Cancelled', 'Cancelled'),
     )
     customer_name=models.CharField(max_length=100)
     email=models.EmailField()
@@ -44,7 +45,13 @@ class Order(models.Model):
     table_num=models.IntegerField(null=True,blank=True)
     status=models.CharField(max_length=20,choices=STATUS_CHOICES, default='pending')
     total_amt=models.DecimalField(max_digit=10,decimal_places=2,default=0.00)
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
+    menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
 
+    def __str__(self):
+        return f"{self.quantity} x {self.menu_item.name}"
 
 
     
