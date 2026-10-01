@@ -1,0 +1,29 @@
+{% extends 'cafe/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0 p-4">
+            <div class="row">
+                <div class="col-md-6">
+                    {% if item.image %}
+                        <img src="{{ item.image.url }}" class="img-fluid rounded shadow-sm" alt="{{ item.name }}" style="width: 100%; height: 250px; object-fit: cover;">
+                    {% endif %}
+                </div>
+                <div class="col-md-6 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-secondary mb-2">{{ item.category.name }}</span>
+                        <h2 class="fw-bold">{{ item.name }}</h2>
+                        <p class="text-success fw-bold fs-4">${{ item.price }}</p>
+                        <p class="text-muted">{{ item.description }}</p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="{% url 'menu_list' %}" class="btn btn-outline-secondary btn-sm">Back to Menu</a>
+                        <a href="{% url 'menu_edit' item.pk %}" class="btn btn-warning btn-sm">Edit Item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

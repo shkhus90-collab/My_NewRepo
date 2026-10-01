@@ -1,0 +1,40 @@
+/* static/css/style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar Enhancements */
+.navbar {
+    border-bottom: 2px solid #343a40;
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+}
+
+/* Card Hover Animations */
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #ffffff;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
