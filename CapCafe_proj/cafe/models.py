@@ -9,7 +9,7 @@ class Category(models.Model):
         verbose_name_plural='Categories'
     def __str__(self):
         return self.name
-class MenuItems(models.Model):
+class MenuItem(models.Model):
     category=models.ForeignKey(Category,related_name='items',on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
     description=models.TextField(blank=True )
@@ -45,7 +45,7 @@ class Order(models.Model):
     phone=models.CharField(max_length=20)
     table_num=models.IntegerField(null=True,blank=True)
     status=models.CharField(max_length=20,choices=STATUS_CHOICES, default='pending')
-    total_amt=models.DecimalField(max_digit=10,decimal_places=2,default=0.00)
+    total_amt=models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
     menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)

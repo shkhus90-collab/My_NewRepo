@@ -9,7 +9,7 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 @admin.register(MenuItem)
-class MenuItemAdmin(admin.ModelAdmin):
+class MenuItemsAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'price', 'is_available')
     list_filter = ('category', 'is_available')
     search_fields = ('name', 'description')
