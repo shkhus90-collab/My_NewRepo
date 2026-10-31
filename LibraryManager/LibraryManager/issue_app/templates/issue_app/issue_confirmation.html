@@ -1,0 +1,13 @@
+<h2>Please confirm book issue</h2>
+
+<p>Roll number: {{ student_roll_number }}</p>
+<p>Library card: {{ library_card_number }}</p>
+<p>Book: {{ book_title }} by {{ author_name }}</p>
+<p>Issue date: {{ issue_date }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+</form>
+
+<a href="{% url 'issue_book' %}">Go back and edit</a>
