@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import IssuedBook
+from . import views
+
 # Create your views here.
 
 def issue_book(req):
