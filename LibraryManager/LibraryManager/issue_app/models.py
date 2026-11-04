@@ -6,4 +6,4 @@ class IssuedBook(models.Model):
     library_card_number=models.CharField(max_length=50)
     book_title=models.CharField(max_length=100)
     author_name=models.CharField(max_length=200)
-    issue_date=models.DateField
+    issue_date=models.DateField()

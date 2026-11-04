@@ -7,6 +7,12 @@
 
 <form method="post">
     {% csrf_token %}
+    <!-- Hidden inputs to send data back to the view on POST -->
+    <input type="hidden" name="student_roll_number" value="{{ student_roll_number }}">
+    <input type="hidden" name="library_card_number" value="{{ library_card_number }}">
+    <input type="hidden" name="book_title" value="{{ book_title }}">
+    <input type="hidden" name="author_name" value="{{ author_name }}">
+    <input type="hidden" name="issue_date" value="{{ issue_date }}">
     <button type="submit">Confirm</button>
 </form>
 
